@@ -1,0 +1,26 @@
+.centered{
+    text-align: center;
+}
+
+#titlecard{
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+#titlecardsubtext{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.textboxes {
+    width: 10px;
+    height: 10px;
+}
+
+#computer{
+    margin-top: 10px;
+}
+
+#gamestats{
+    margin-top: 10px;
+}

@@ -14,6 +14,9 @@
     var wins = 0;
     var losses = 0;
 
+    // Array for storing guessed letters
+    var guessedLetters = [];
+
     // User enters string and presses submit
         document.onkeyup = function(event) {
 
@@ -22,7 +25,7 @@
 
             // Displaying the user's input back onto the html 
             document.getElementById("userText").innerHTML = userText;
-
+            
             // Game Logic
             //  If the user is incorrect, else if the user is correct. 
             if (computerLetter !== userText) {
@@ -31,19 +34,23 @@
                 document.getElementById("computerDisplay").innerHTML = "?";
                 console.log(computerLetter);
                 document.getElementById("guesses").innerHTML = guesses; 
-            } else if (computerLetter == userText) {
+                guessedLetters.push(userText);
+                document.getElementById("guessedLetters").innerHTML = guessedLetters;
+                } else if (computerLetter == userText) {
                 wins++
                 guesses = 10
                 document.getElementById("comuterDialogue").innerHTML = "Correct! You may have ESP";
                 document.getElementById("computerDisplay").innerHTML = computerLetter;
                 computerLetter = theAlphabet[Math.floor(Math.random()*theAlphabet.length)];
+                guessedLetters.length = [0];
             };
-
+            
             // If the user runs out of guesses
             if (guesses == 0) {
-                losses++
-                guesses = 10
+                losses++;
+                guesses = 10;
                 computerLetter = theAlphabet[Math.floor(Math.random()*theAlphabet.length)];
+                guessedLetters.length = [0];
                 document.getElementById("comuterDialogue").innerHTML = "I don't think you have ESP... 50c to play again.";
             };
 
@@ -51,5 +58,6 @@
             document.getElementById("guesses").innerHTML = guesses;
             document.getElementById("wins").innerHTML = wins;
             document.getElementById("losses").innerHTML = losses;
+                        
         };
 

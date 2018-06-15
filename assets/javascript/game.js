@@ -49,6 +49,7 @@
             if (guesses == 0) {
                 losses++;
                 guesses = 10;
+                document.getElementById("computerDisplay").innerHTML = computerLetter;
                 computerLetter = theAlphabet[Math.floor(Math.random()*theAlphabet.length)];
                 guessedLetters.length = [0];
                 document.getElementById("comuterDialogue").innerHTML = "I don't think you have ESP... 50c to play again.";
